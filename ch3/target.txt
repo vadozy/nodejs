@@ -1,1 +1,33 @@
-aa
+1)	“SP Medication” table: MSC should be char(1) ? YES
+
+2)	Let’s briefly discuss the reason for "Client" table and review the fields.
+
+3)	"Reject Codes and Messages" table. Should the "Carrier ID" type stay char(255) or should it be changed to char(9)? YES....  Also, the Reject code field is char(3) (not a number), is it correct ? YES leave it alpha-numeric
+
+4)	“Index Medication” table: check the types of the numeric fields "R-* and M-*, they are all currently char(255). Is it Correct or should it be changed to some numeric? NUMERIC WITH DECIMAL, how many decimal digits (3?).
+
+5)	Sample data (Alias, Rejected, Alt Exception, Index Med) would be nice.
+
+6)	Last time it was mentioned that we’d get 9 tables. We got 7. Is it final, or are more tables coming?  (Is “Alternative Inclusion” a candidate to split into 3 tables?)
+
+7)	match up the table names. As of today, we were coding for the following 7 tables names:
+
+Alias List
+Specialty Medication List
+Reporting CAG Table (CLIENT)
+Reject Code Messages Master List
+Alternative File
+CAG to Formulary Mapping - deferred
+Drug List - == INDEX MEDICATION
+
+We got the following 7 tables:
+
+Alias
+SP Medication
+Client
+Rejected Codes and Messages
+Alternative Exception
+Alternative Inclusion
+Index Medication
+
+Compare these 2 lists, match what matches and agree on the table names

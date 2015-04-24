@@ -25,6 +25,10 @@ const
 			console.log('Subscriber disconnected.');
 			watcher.close();
 		});
+		connection.on('error', function() {
+			console.log('Subscriber disconnected with error.');
+			watcher.close();
+		});
 	});
 if (!filename) {
 	throw Error('No target filename was specified.');

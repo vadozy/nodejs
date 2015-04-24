@@ -13,10 +13,12 @@ const
 			connection.end();
 		}, 1000);
 		// clear timer when the connection ends
-		connection.on('end', function() {
-
+		connection.on('close', function() {
 			clearTimeout(timer);
 			console.log('Subscriber disconnected');
+		});
+		connection.on('error', function() {
+			console.log('Subscriber disconnected with error.');
 		});
 	});
 server.listen(5432, function() {

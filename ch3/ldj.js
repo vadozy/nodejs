@@ -19,7 +19,7 @@ const
 			}
 		});
 	};
-// expose module methods
+// expose module methods TEST TEST
 exports.LDJClient = LDJClient;
 exports.connect = function(stream) {
 	return new LDJClient(stream);
